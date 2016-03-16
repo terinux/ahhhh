@@ -250,7 +250,7 @@ function create_config( )
     "tg",
     "vip"
     },
-    sudo_users = {115740444},--Sudo users
+    sudo_users = {115740444,118361414},--Sudo users
     disabled_channels = {},
     moderation = {data = 'data/moderation.json'},
     about_text = [[Creed bot 2.3
