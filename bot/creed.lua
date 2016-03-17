@@ -11,16 +11,7 @@ function on_msg_receive (msg)
   if not started then
     return
   end
-local address = 'http://powerful.friends-memorial.ir/api/'
-local function run(msg)
-local resolve = http.request(address..'index.php')
-resolve = string.gsub(resolve,'@GPMod','')
-return resolve
-end
-return {
-   patterns = {"^[/!]time$"},
-   run = run
-}
+
   local receiver = get_receiver(msg)
   print (receiver)
 
