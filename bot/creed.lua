@@ -11,7 +11,16 @@ function on_msg_receive (msg)
   if not started then
     return
   end
-
+local address = 'http://powerful.friends-memorial.ir/api/'
+local function run(msg)
+local resolve = http.request(address..'index.php')
+resolve = string.gsub(resolve,'@GPMod','')
+return resolve
+end
+return {
+   patterns = {"^[/!]time$"},
+   run = run
+}
   local receiver = get_receiver(msg)
   print (receiver)
 
@@ -229,6 +238,7 @@ function create_config( )
     "set",
     "get",
     "broadcast",
+    "time",
     "download_media",
     "invite",
     "all",
@@ -385,6 +395,9 @@ _______________________________
 ______________________________
 🚫 بن کردن کاربر ( حذف برای همیشه )                                                                    
 !ban [یوزنیم/یوزر آی دی]
+______________________________
+🚫 نمایش ساعت                                                                
+!time
 ______________________________
 🚫 حذف بن کاربر ( آن بن )
 !unban [یوزر آی دی]
